@@ -24,6 +24,12 @@ app.use(
 
 app.use('/api/mpesa', mpesaRoutes);
 
+app.get('/', (res, req) => {
+    res.status(200).json({
+        message: 'Hello world',
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     connectDb();
